@@ -16,6 +16,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        
+        
+        // set UINavigationController as root viewController
+        let rootNavController = UINavigationController(rootViewController: HomeViewController())
+        rootNavController.view.backgroundColor = .white
+        self.window?.rootViewController = rootNavController
+        self.window?.makeKeyAndVisible()
+        
+        // setup appearance
+        setupAppearance()
+        
         return true
     }
 
@@ -41,6 +53,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+
+    // setup app appearance including bar tint color etc.
+    private func setupAppearance(){
+        UIBarButtonItem.appearance().setBackButtonTitlePositionAdjustment(UIOffsetMake(-800, 0), for:UIBarMetrics.default)
+    }
+    
 
 }
 

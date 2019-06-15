@@ -6,6 +6,7 @@ def pods
   pod 'Alamofire'
   pod 'AlamofireObjectMapper'
   pod 'SnapKit'
+  pod 'SwiftyJson'
 end
 
 target 'SwiftyWeather' do
