@@ -76,8 +76,8 @@
 			isa = PBXGroup;
 			children = (
 				3DF2318522B348D80036A9D7 /* AppDelegate.swift */,
-				3DF2319822B3D54A0036A9D7 /* ViewController */,
 				3DF2319722B3D5400036A9D7 /* Model */,
+				3DF2319822B3D54A0036A9D7 /* View */,
 				3DF2319922B3D5520036A9D7 /* ViewModel */,
 				3DF2319D22B3E5BA0036A9D7 /* Networking */,
 				3DF2318C22B348DF0036A9D7 /* Assets.xcassets */,
@@ -95,13 +95,13 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		3DF2319822B3D54A0036A9D7 /* ViewController */ = {
+		3DF2319822B3D54A0036A9D7 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				3DF2318722B348D80036A9D7 /* HomeViewController.swift */,
 				3DF2319B22B3E5AD0036A9D7 /* DetailViewController.swift */,
 			);
-			path = ViewController;
+			path = View;
 			sourceTree = "<group>";
 		};
 		3DF2319922B3D5520036A9D7 /* ViewModel */ = {

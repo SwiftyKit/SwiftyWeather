@@ -48,6 +48,7 @@ final class NetworkManager {
         Alamofire.request(URLString, method: .get, parameters: parameters).validate().responseJSON { (response) in
             switch response.result {
             case .success(let json):
+                print(json)
                 let rspJson = JSON(json as Any)
                 if let value = T(JSON: rspJson.dictionaryObject ?? [:]) {
                     completionHandler(.Success(value))
@@ -59,11 +60,11 @@ final class NetworkManager {
         }
     }
     
-    func fetchWeather(with coordinates: Coordinates, completionHandler: @escaping (NWResult<Weather>) -> Void) {
+    func fetchWeather(with coordinates: Coordinates, completionHandler: @escaping (NWResult<WeatherReport>) -> Void) {
         
         let urlString = ForecastProvider.DarkSky(apiKey: apiKey, coordinates: coordinates).requestURL
         
-        requestData(URLString: urlString, parameters: nil) { (result: NWResult<Weather>) in
+        requestData(URLString: urlString, parameters: nil) { (result: NWResult<WeatherReport>) in
             print("111")
         }
         
