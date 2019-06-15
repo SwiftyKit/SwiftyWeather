@@ -6,6 +6,8 @@
 //  Copyright © 2019 apple. All rights reserved.
 //
 
+import Foundation
+
 enum NWResult<T> {
     case Success(T)
     case Failure(Error)
@@ -13,7 +15,7 @@ enum NWResult<T> {
 
 
 protocol NWURLProtocol {
-    var baseURL: URL { get }
-    var path: String { get }
+    var baseURL: String { get }
+    var requestURL: String { get }
 }
 

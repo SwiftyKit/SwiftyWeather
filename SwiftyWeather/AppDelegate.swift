@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         // set UINavigationController as root viewController
+        self.window = UIWindow(frame: UIScreen.main.bounds)
         let rootNavController = UINavigationController(rootViewController: HomeViewController())
         rootNavController.view.backgroundColor = .white
         self.window?.rootViewController = rootNavController
@@ -56,7 +57,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     // setup app appearance including bar tint color etc.
     private func setupAppearance(){
-        UIBarButtonItem.appearance().setBackButtonTitlePositionAdjustment(UIOffsetMake(-800, 0), for:UIBarMetrics.default)
+        UIBarButtonItem.appearance().setBackButtonTitlePositionAdjustment(UIOffset(horizontal: -800, vertical: 0), for:UIBarMetrics.default)
     }
     
 

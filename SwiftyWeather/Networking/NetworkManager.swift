@@ -5,8 +5,10 @@
 //  Created by lingzhao on 2019/6/14.
 //  Copyright © 2019 apple. All rights reserved.
 //
-
+import UIKit
 import Alamofire
+import ObjectMapper
+import SwiftyJSON
 
 struct Coordinates {
     let latitude: Double
@@ -14,15 +16,15 @@ struct Coordinates {
 }
 
 
-enum ForecastURL: NWURLProtocol {
+enum ForecastProvider: NWURLProtocol {
     case DarkSky(apiKey: String, coordinates: Coordinates)
-    var baseURL: URL {
-        return URL(string: "https://api.darksky.net")!
+    var baseURL: String {
+        return "https://api.darksky.net"
     }
-    var path: String {
+    var requestURL: String {
         switch self {
         case .DarkSky(let apiKey, let coordinates):
-            return "/forecast/\(apiKey)/\(coordinates.latitude),\(coordinates.longitude)"
+            return baseURL + "/forecast/\(apiKey)/\(coordinates.latitude),\(coordinates.longitude)"
         }
     }
 }
@@ -38,7 +40,33 @@ final class NetworkManager {
         return self.instance
     }
     
-    func fetchWeather(with coordinates: Coordinates, completionHandler: @escaping (NwResult<CurrentWeather>) -> Void) {
+    // data request based on Alamofire
+    private func requestData<T: Mappable>(URLString : String, parameters : [String : Any]? = nil, completionHandler: @escaping (NWResult<T>) -> Void) {
+ 
+        // send http request
+        
+        Alamofire.request(URLString, method: .get, parameters: parameters).validate().responseJSON { (response) in
+            switch response.result {
+            case .success(let json):
+                let rspJson = JSON(json as Any)
+                if let value = T(JSON: rspJson.dictionaryObject ?? [:]) {
+                    completionHandler(.Success(value))
+                }
+            case .failure(let error):
+                completionHandler(.Failure(error))
+                
+            }
+        }
+    }
+    
+    func fetchWeather(with coordinates: Coordinates, completionHandler: @escaping (NWResult<Weather>) -> Void) {
+        
+        let urlString = ForecastProvider.DarkSky(apiKey: apiKey, coordinates: coordinates).requestURL
+        
+        requestData(URLString: urlString, parameters: nil) { (result: NWResult<Weather>) in
+            print("111")
+        }
+        
         
     }
     
