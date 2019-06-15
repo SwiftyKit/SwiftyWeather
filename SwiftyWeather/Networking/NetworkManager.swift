@@ -65,7 +65,16 @@ final class NetworkManager {
         let urlString = ForecastProvider.DarkSky(apiKey: apiKey, coordinates: coordinates).requestURL
         
         requestData(URLString: urlString, parameters: nil) { (result: NWResult<WeatherReport>) in
-            print("111")
+            switch result {
+            case .Success(let value):
+                // success response.
+                print(value)
+            case.Failure(let error):
+                // show error alert etc.
+                print(error)
+            }
+            
+            completionHandler(result)
         }
         
         

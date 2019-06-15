@@ -29,7 +29,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VAR-zU-cjp">
                     <rect key="frame" x="0.0" y="44" width="414" height="414"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="21" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GSa-jB-g5u">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="21" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="50" translatesAutoresizingMaskIntoConstraints="NO" id="GSa-jB-g5u">
                             <rect key="frame" x="82" y="127" width="250" height="160"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="160" id="Tkm-66-akC"/>
@@ -151,10 +151,26 @@
                         <constraint firstItem="GSa-jB-g5u" firstAttribute="centerY" secondItem="VAR-zU-cjp" secondAttribute="centerY" id="jOj-1m-0Z5"/>
                     </constraints>
                 </view>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Gwu-UB-Fdn">
+                    <rect key="frame" x="0.0" y="458" width="414" height="150"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="150" id="tSo-3e-Y5U"/>
+                    </constraints>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rhm-mi-WVy">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="Gwu-UB-Fdn" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="C7d-zQ-xx7"/>
+                <constraint firstItem="Gwu-UB-Fdn" firstAttribute="top" secondItem="VAR-zU-cjp" secondAttribute="bottom" id="I2r-iq-OkJ"/>
                 <constraint firstItem="VAR-zU-cjp" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="OQT-SF-ZGW"/>
+                <constraint firstItem="Gwu-UB-Fdn" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Oqr-Xm-05s"/>
                 <constraint firstItem="VAR-zU-cjp" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="W8J-2C-LKg"/>
                 <constraint firstItem="VAR-zU-cjp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="aGI-u5-erK"/>
             </constraints>

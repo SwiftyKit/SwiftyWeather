@@ -72,6 +72,13 @@ class DailyWeather: BaseModel {
         sunriseTime <- (map["sunriseTime"], stringTransform)
         sunsetTime <- (map["sunsetTime"], stringTransform)
     }
+    
+    var iconImageURL:URL? {
+        if let icon = icon {
+            return  URL(string: "https://darksky.net/images/weather-icons/\(icon).png")
+        }
+        return nil
+    }
 }
 
 

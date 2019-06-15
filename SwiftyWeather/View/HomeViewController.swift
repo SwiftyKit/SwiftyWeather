@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class HomeViewController: UIViewController {
     
@@ -16,6 +17,13 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var currentVisibilityLabel: UILabel!
     @IBOutlet weak var currentHumidityLabel: UILabel!
     @IBOutlet weak var currentTemperatureLabel: UILabel!
+    
+    let viewModel:HomeViewModel = HomeViewModel()
+    var weatherReport: WeatherReport? {
+        didSet {
+            self.updateUI()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,9 +48,30 @@ class HomeViewController: UIViewController {
     //MARK: actions
     
     @objc func rightClick() {
-        NetworkManager.shared.fetchWeather(with: Coordinates(latitude: 37.8267, longitude: -122.4233)) { (result) in
-            print(result)
+        
+        viewModel.fetchWeather(with: Coordinates(latitude: 37.8267, longitude: -122.4233)) {[weak self]  (weatherReport) in
+            if let weatherReport = weatherReport {
+                self?.weatherReport = weatherReport
+            }
         }
     }
+    
+    
+    
+    
+    //MARK: network request
+    
+    
+    //MARK: view update
+    
+    func updateUI() {
+        self.iconImage.kf.setImage(with: weatherReport?.currently?.iconImageURL)
+        self.currentTemperatureLabel.text = weatherReport?.currently?.temperature ?? ""
+        self.currentSummaryLabel.text = weatherReport?.currently?.summary ?? ""
+        self.currentWindLabel.text = weatherReport?.currently?.windSpeed ?? ""
+        self.currentVisibilityLabel.text = weatherReport?.currently?.visibility ?? ""
+        self.currentHumidityLabel.text = weatherReport?.currently?.humidity ?? ""
+    }
+    
 
 }
