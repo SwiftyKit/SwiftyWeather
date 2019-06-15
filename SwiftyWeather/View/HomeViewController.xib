@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="SwiftyWeather" customModuleProvider="target">
+            <connections>
+                <outlet property="currentHumidityLabel" destination="Mzc-KS-w6G" id="ABP-cM-8SP"/>
+                <outlet property="currentSummaryLabel" destination="xQ5-i8-c7u" id="iWn-7Y-sfG"/>
+                <outlet property="currentTemperatureLabel" destination="GSa-jB-g5u" id="jQu-np-wZ8"/>
+                <outlet property="currentVisibilityLabel" destination="WKm-cN-3qO" id="QRC-Fe-Ke1"/>
+                <outlet property="currentWindLabel" destination="4Un-M5-oD6" id="Tsf-WA-85m"/>
+                <outlet property="iconImage" destination="YdQ-l0-dUm" id="CDS-bx-v2a"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VAR-zU-cjp">
+                    <rect key="frame" x="0.0" y="44" width="414" height="414"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="21" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GSa-jB-g5u">
+                            <rect key="frame" x="82" y="127" width="250" height="160"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="160" id="Tkm-66-akC"/>
+                                <constraint firstAttribute="width" constant="250" id="bj2-Eh-hJa"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="PingFangSC-Ultralight" family="PingFang SC" pointSize="200"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YdQ-l0-dUm">
+                            <rect key="frame" x="30" y="25" width="86" height="86"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="86" id="3OM-oi-sR0"/>
+                                <constraint firstAttribute="width" constant="86" id="PoS-2R-Vya"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mostly Cloudy" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xQ5-i8-c7u">
+                            <rect key="frame" x="146" y="35" width="135" height="28"/>
+                            <fontDescription key="fontDescription" name="PingFangSC-Medium" family="PingFang SC" pointSize="20"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LpQ-s6-4QB">
+                            <rect key="frame" x="171" y="344" width="72" height="50"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" fixedFrame="YES" text="Wind" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n93-nC-OGr">
+                                    <rect key="frame" x="0.0" y="32" width="72" height="18"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="15"/>
+                                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="N/A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Un-M5-oD6">
+                                    <rect key="frame" x="10" y="0.0" width="52" height="24"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                    <variation key="heightClass=regular-widthClass=regular">
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="23"/>
+                                    </variation>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="72" id="fXk-B8-M3V"/>
+                                <constraint firstAttribute="height" constant="50" id="hfa-9S-Er9"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0BD-Ct-Xaf">
+                            <rect key="frame" x="312" y="344" width="72" height="50"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" fixedFrame="YES" text="Visibility" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="clK-TU-bVW">
+                                    <rect key="frame" x="0.0" y="32" width="72" height="18"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="15"/>
+                                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="N/A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WKm-cN-3qO">
+                                    <rect key="frame" x="10" y="0.0" width="52" height="24"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                    <variation key="heightClass=regular-widthClass=regular">
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="23"/>
+                                    </variation>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="72" id="27G-Vj-vhz"/>
+                                <constraint firstAttribute="height" constant="50" id="SVC-TG-v1k"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lye-TX-dv4">
+                            <rect key="frame" x="30" y="344" width="72" height="50"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="N/A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mzc-KS-w6G">
+                                    <rect key="frame" x="10" y="0.0" width="52" height="24"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                    <variation key="heightClass=regular-widthClass=regular">
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="23"/>
+                                    </variation>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" fixedFrame="YES" text="Humidity" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dE3-sg-dTv">
+                                    <rect key="frame" x="0.0" y="32" width="72" height="18"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="15"/>
+                                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="72" id="DlY-U1-JAJ"/>
+                                <constraint firstAttribute="height" constant="50" id="dpS-YD-SvH"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" red="0.10588235294117647" green="0.29803921568627451" blue="0.53333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="xQ5-i8-c7u" firstAttribute="top" secondItem="VAR-zU-cjp" secondAttribute="top" constant="35" id="6TM-pA-cC4"/>
+                        <constraint firstItem="YdQ-l0-dUm" firstAttribute="top" secondItem="VAR-zU-cjp" secondAttribute="top" constant="25" id="7KA-FY-B1J"/>
+                        <constraint firstAttribute="height" constant="414" id="8Zb-aa-HPC"/>
+                        <constraint firstItem="lye-TX-dv4" firstAttribute="leading" secondItem="VAR-zU-cjp" secondAttribute="leading" constant="30" id="9Sk-fu-04f"/>
+                        <constraint firstAttribute="bottom" secondItem="LpQ-s6-4QB" secondAttribute="bottom" constant="20" id="DhC-wo-BXi"/>
+                        <constraint firstItem="lye-TX-dv4" firstAttribute="bottom" secondItem="LpQ-s6-4QB" secondAttribute="bottom" id="E7W-sN-EvX"/>
+                        <constraint firstItem="GSa-jB-g5u" firstAttribute="centerX" secondItem="VAR-zU-cjp" secondAttribute="centerX" id="K9Y-aY-ZwM"/>
+                        <constraint firstAttribute="trailing" secondItem="0BD-Ct-Xaf" secondAttribute="trailing" constant="30" id="SsO-fr-hsT"/>
+                        <constraint firstItem="LpQ-s6-4QB" firstAttribute="centerX" secondItem="VAR-zU-cjp" secondAttribute="centerX" id="VN8-kh-W64"/>
+                        <constraint firstItem="YdQ-l0-dUm" firstAttribute="leading" secondItem="VAR-zU-cjp" secondAttribute="leading" constant="30" id="Ydx-6p-WU3"/>
+                        <constraint firstItem="0BD-Ct-Xaf" firstAttribute="bottom" secondItem="LpQ-s6-4QB" secondAttribute="bottom" id="Yox-4d-OTO"/>
+                        <constraint firstItem="xQ5-i8-c7u" firstAttribute="leading" secondItem="YdQ-l0-dUm" secondAttribute="trailing" constant="30" id="dUr-zi-U0d"/>
+                        <constraint firstItem="GSa-jB-g5u" firstAttribute="centerY" secondItem="VAR-zU-cjp" secondAttribute="centerY" id="jOj-1m-0Z5"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="VAR-zU-cjp" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="OQT-SF-ZGW"/>
+                <constraint firstItem="VAR-zU-cjp" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="W8J-2C-LKg"/>
+                <constraint firstItem="VAR-zU-cjp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="aGI-u5-erK"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="195.6521739130435" y="83.705357142857139"/>
+        </view>
+    </objects>
+</document>
