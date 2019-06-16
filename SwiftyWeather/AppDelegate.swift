@@ -59,7 +59,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func setupAppearance(){
         UINavigationBar.appearance().barTintColor = UIColor(hex: 0x303F9F)
         UINavigationBar.appearance().tintColor = .white
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17.0)]
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 22.0)]
         UINavigationBar.appearance().isTranslucent = false
         UIBarButtonItem.appearance().setBackButtonTitlePositionAdjustment(UIOffset(horizontal: -800, vertical: 0), for:UIBarMetrics.default)
     }

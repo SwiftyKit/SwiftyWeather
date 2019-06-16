@@ -39,10 +39,10 @@
                         <constraint firstAttribute="height" constant="100" id="nN8-6x-A4K"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jun 17" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SfO-T2-le3">
-                    <rect key="frame" x="50" y="354" width="314" height="80"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jun 17" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="SfO-T2-le3">
+                    <rect key="frame" x="50" y="324" width="314" height="100"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="80" id="7PF-xK-WlW"/>
+                        <constraint firstAttribute="height" constant="100" id="7PF-xK-WlW"/>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="mgz-hx-qSJ"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
@@ -55,7 +55,7 @@
                 <constraint firstItem="g6Z-en-ilK" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="Fz7-b4-728"/>
                 <constraint firstItem="dMT-Ox-ZCs" firstAttribute="top" secondItem="g6Z-en-ilK" secondAttribute="bottom" constant="50" id="Rnh-41-Nny"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="SfO-T2-le3" secondAttribute="trailing" constant="50" id="bIy-LB-qbC"/>
-                <constraint firstItem="SfO-T2-le3" firstAttribute="top" secondItem="dMT-Ox-ZCs" secondAttribute="bottom" constant="100" id="bMa-O7-VOC"/>
+                <constraint firstItem="SfO-T2-le3" firstAttribute="top" secondItem="dMT-Ox-ZCs" secondAttribute="bottom" constant="70" id="bMa-O7-VOC"/>
                 <constraint firstItem="dMT-Ox-ZCs" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="hyy-aU-82C"/>
                 <constraint firstItem="SfO-T2-le3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="50" id="kmx-R8-Dqg"/>
                 <constraint firstItem="SfO-T2-le3" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="nIA-tf-MM0"/>
