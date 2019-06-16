@@ -21,7 +21,6 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var loadingLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var refreshLabel: UILabel!
     
     private lazy var currentLocation: ForecastLocation = {
         let location = ForecastLocation()
@@ -87,13 +86,13 @@ class HomeViewController: UIViewController {
     
     func startLoading() {
         loadingView.isHidden = false
+        loadingLabel.text = "Retrieving weather data..."
         activityIndicator.startAnimating()
     }
     
     func finishLoading() {
         loadingView.isHidden = true
         activityIndicator.stopAnimating()
-        refreshLabel.isHidden = true
     }
     
     func updateUI() {
