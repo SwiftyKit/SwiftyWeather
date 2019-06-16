@@ -57,6 +57,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     // setup app appearance including bar tint color etc.
     private func setupAppearance(){
+        UINavigationBar.appearance().barTintColor = UIColor(hex: 0x303F9F)
+        UINavigationBar.appearance().tintColor = .white
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17.0)]
+        UINavigationBar.appearance().isTranslucent = false
         UIBarButtonItem.appearance().setBackButtonTitlePositionAdjustment(UIOffset(horizontal: -800, vertical: 0), for:UIBarMetrics.default)
     }
     

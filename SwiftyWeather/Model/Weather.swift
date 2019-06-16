@@ -79,6 +79,15 @@ class DailyWeather: BaseModel {
         }
         return nil
     }
+    
+    var dateString: String? {
+        if let time = time {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "dd MMM" //yyyy
+            return formatter.string(from: time)
+        }
+        return nil
+    }
 }
 
 

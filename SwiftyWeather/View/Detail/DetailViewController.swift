@@ -2,20 +2,27 @@
 //  DetailViewController.swift
 //  SwiftyWeather
 //
-//  Created by lingzhao on 2019/6/14.
+//  Created by lingzhao on 2019/6/15.
 //  Copyright © 2019 apple. All rights reserved.
 //
 
 import UIKit
 
 class DetailViewController: UIViewController {
-
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var iconImageView: UIImageView!
+    @IBOutlet weak var summaryLabel: UILabel!
+    
+    var dailyWeather: DailyWeather? 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.title = "Detail"
+        self.updateUI()
     }
-    
+
 
     /*
     // MARK: - Navigation
@@ -26,5 +33,11 @@ class DetailViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func updateUI() {
+        dateLabel.text = dailyWeather?.dateString ?? ""
+        iconImageView.kf.setImage(with: dailyWeather?.iconImageURL)
+        summaryLabel.text = dailyWeather?.summary ?? ""
+    }
 
 }
