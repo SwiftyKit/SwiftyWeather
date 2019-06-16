@@ -12,6 +12,7 @@ import Kingfisher
 class HomeViewController: UIViewController {
     
     @IBOutlet weak var iconImage: UIImageView!
+    @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var currentSummaryLabel: UILabel!
     @IBOutlet weak var currentWindLabel: UILabel!
     @IBOutlet weak var currentVisibilityLabel: UILabel!
@@ -102,7 +103,7 @@ class HomeViewController: UIViewController {
         self.currentWindLabel.text = weatherReport?.currently?.windSpeed ?? ""
         self.currentVisibilityLabel.text = weatherReport?.currently?.visibility ?? ""
         self.currentHumidityLabel.text = weatherReport?.currently?.humidity ?? ""
-        
+        self.locationLabel.text = weatherReport?.timezone ?? ""
         self.collectionView.reloadData()
     }
     
@@ -166,6 +167,7 @@ extension HomeViewController: ForecastLocationDelegate {
         
     }
     func locationDidGeocode(city: String, state: String) {
+        loadingLabel.text = "\(state),\(city)"
     }
 }
 

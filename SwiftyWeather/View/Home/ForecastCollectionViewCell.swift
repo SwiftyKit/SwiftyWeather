@@ -33,7 +33,7 @@ class ForecastCollectionViewCell: UICollectionViewCell {
         
         guard let model = model else { return }
         
-        dayLabel.text = model.dateString ?? ""
+        dayLabel.text = model.weekDayString ?? ""
         let low = model.temperatureLow?.roundString ?? ""
         let high = model.temperatureHigh?.roundString ?? ""
         tempLabel.text = "\(low)° - \(high)°"

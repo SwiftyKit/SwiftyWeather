@@ -88,6 +88,15 @@ class DailyWeather: BaseModel {
         }
         return nil
     }
+    
+    var weekDayString: String? {
+        if let time = time {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "EEE" //yyyy
+            return formatter.string(from: time)
+        }
+        return nil
+    }
 }
 
 
@@ -95,9 +104,11 @@ class WeatherReport: BaseModel {
     
     var currently: DailyWeather?
     var daily: [DailyWeather]?
+    var timezone: String?
     
     override func mapping(map: Map) {
         currently <- map["currently"]
         daily <- map["daily.data"]
+        timezone <- map["timezone"]
     }
 }

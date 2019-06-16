@@ -35,7 +35,7 @@ class DetailViewController: UIViewController {
     */
     
     func updateUI() {
-        dateLabel.text = dailyWeather?.dateString ?? ""
+        dateLabel.text = "\(dailyWeather?.weekDayString ?? ""), \(dailyWeather?.dateString ?? "")"
         iconImageView.kf.setImage(with: dailyWeather?.iconImageURL)
         summaryLabel.text = dailyWeather?.summary ?? ""
     }

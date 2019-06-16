@@ -39,5 +39,7 @@
 	</array>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Your location is required for get weather.</string>
+	<key>CFBundleDisplayName</key>
+	<string>Forecast</string>
 </dict>
 </plist>
