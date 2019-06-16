@@ -19,15 +19,22 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var currentTemperatureLabel: UILabel!
     @IBOutlet weak var loadingView: UIView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var loadingLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var refreshLabel: UILabel!
     
-    let viewModel:HomeViewModel = HomeViewModel()
+    private lazy var currentLocation: ForecastLocation = {
+        let location = ForecastLocation()
+        location.delegate = self
+        return location
+    }()
     var weatherReport: WeatherReport? {
         didSet {
             self.updateUI()
         }
     }
-
+    let viewModel:HomeViewModel = HomeViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -50,21 +57,13 @@ class HomeViewController: UIViewController {
     //MARK: actions
     
     @objc func rightClick() {
-        
-        self.startLoading()
-        viewModel.fetchWeather(with: Coordinates(latitude: 37.8267, longitude: -122.4233)) {[weak self]  (weatherReport) in
-            if let weatherReport = weatherReport {
-                self?.weatherReport = weatherReport
-            }
-            self?.finishLoading()
-        }
+        currentLocation.startLocation()
     }
-    
-    
-    
+ 
     
     //MARK: network request
     
+
     
     //MARK: view update
     
@@ -94,7 +93,7 @@ class HomeViewController: UIViewController {
     func finishLoading() {
         loadingView.isHidden = true
         activityIndicator.stopAnimating()
-        collectionView.flashScrollIndicators()
+        refreshLabel.isHidden = true
     }
     
     func updateUI() {
@@ -120,7 +119,7 @@ extension HomeViewController: UICollectionViewDelegate,UICollectionViewDataSourc
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return weatherReport?.daily?.count ?? 7
+        return weatherReport?.daily?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -139,3 +138,35 @@ extension HomeViewController: UICollectionViewDelegate,UICollectionViewDataSourc
         }
     }
 }
+
+// MARK: - lsLocationDelegate
+
+extension HomeViewController: ForecastLocationDelegate {
+    func locationDidDenied() {
+        //Don't allow
+        loadingView.isHidden = false
+        loadingLabel.text = "Unable to access your location.  Please enable location services in Settings."
+        activityIndicator.stopAnimating()
+        
+    }
+    func locationDidAuthorized() {
+        //Allow, Refresh weather list to show current user location's weather.
+        self.startLoading()
+    }
+    func locationDidFound(longitude: String, latitude: String) {
+        guard let latitude = Double(latitude), let longitude = Double(longitude) else { return }
+        
+        let coordinate = Coordinates(latitude: latitude, longitude: longitude)
+        //let coordinate = Coordinates(latitude: 37.8267, longitude: -122.4233)  //for test
+        viewModel.fetchWeather(with: coordinate) {[weak self]  (weatherReport) in
+            if let weatherReport = weatherReport {
+                self?.weatherReport = weatherReport
+            }
+            self?.finishLoading()
+        }
+        
+    }
+    func locationDidGeocode(city: String, state: String) {
+    }
+}
+

@@ -1,5 +1,11 @@
  
+ //  SwiftyWeather
+ //
+ //  Created by lingzhao on 2019/6/15.
+ //  Copyright © 2019 apple. All rights reserved.
+ //
 
+ 
 #if os(iOS) || os(tvOS) || os(watchOS)
 import UIKit
 

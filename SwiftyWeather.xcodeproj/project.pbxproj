@@ -22,6 +22,7 @@
 		3DF231B622B530430036A9D7 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF231B522B530430036A9D7 /* Constant.swift */; };
 		3DF231B922B5449D0036A9D7 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF231B722B5449D0036A9D7 /* DetailViewController.swift */; };
 		3DF231BA22B5449D0036A9D7 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DF231B822B5449D0036A9D7 /* DetailViewController.xib */; };
+		3DF231BC22B5C5600036A9D7 /* ForecastLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF231BB22B5C5600036A9D7 /* ForecastLocation.swift */; };
 		FC248E3380C4FCD6814ECA28 /* Pods_SwiftyWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8515E16833464371743292E2 /* Pods_SwiftyWeather.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		3DF231B522B530430036A9D7 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		3DF231B722B5449D0036A9D7 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		3DF231B822B5449D0036A9D7 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		3DF231BB22B5C5600036A9D7 /* ForecastLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastLocation.swift; sourceTree = "<group>"; };
 		8515E16833464371743292E2 /* Pods_SwiftyWeather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftyWeather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -139,6 +141,7 @@
 		3DF231AC22B51CC90036A9D7 /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				3DF231BB22B5C5600036A9D7 /* ForecastLocation.swift */,
 				3DF231AD22B51D040036A9D7 /* Extentions.swift */,
 				3DF231B522B530430036A9D7 /* Constant.swift */,
 			);
@@ -299,6 +302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DF231A122B3F14B0036A9D7 /* NetworkConfig.swift in Sources */,
+				3DF231BC22B5C5600036A9D7 /* ForecastLocation.swift in Sources */,
 				3DF231AB22B4F1DF0036A9D7 /* HomeViewModel.swift in Sources */,
 				3DF2319F22B3EEEB0036A9D7 /* NetworkManager.swift in Sources */,
 				3DF231A322B48F030036A9D7 /* Weather.swift in Sources */,

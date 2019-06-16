@@ -12,22 +12,16 @@ class ForecastCollectionViewCell: UICollectionViewCell {
     
     static let cellReuseID = "ForecastCollectionViewCell"
 
-    /// 日期
+    /// date label
     @IBOutlet weak var dayLabel: UILabel!
-    /// 天气图标
+    /// weather icon
     @IBOutlet weak var iconView: UIImageView!
-    /// 气温
+    /// temprature
     @IBOutlet weak var tempLabel: UILabel!
-    /// 数据
+    /// model
     var model: DailyWeather? {
         didSet {
-            dayLabel.text = model?.dateString ?? ""
-            let low = model?.temperatureLow?.roundString ?? ""
-            let high = model?.temperatureHigh?.roundString ?? ""
-            tempLabel.text = "\(low)° - \(high)°"
-            
-            // FIXME: 只是传了白天的天气，需进行判断 时间 为 早间/晚间
-            iconView.kf.setImage(with: model?.iconImageURL)
+            self.updateCell()
         }
     }
     override func awakeFromNib() {
@@ -35,5 +29,17 @@ class ForecastCollectionViewCell: UICollectionViewCell {
     }
     
 
+    func updateCell() {
+        
+        guard let model = model else { return }
+        
+        dayLabel.text = model.dateString ?? ""
+        let low = model.temperatureLow?.roundString ?? ""
+        let high = model.temperatureHigh?.roundString ?? ""
+        tempLabel.text = "\(low)° - \(high)°"
+        
+       
+        iconView.kf.setImage(with: model.iconImageURL)
+    }
 
 }
