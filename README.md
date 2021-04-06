@@ -18,5 +18,5 @@ A simple weather app that uses dark sky API.
 
 ## About 
 
-Created by John Mao. 
+Created by swiftykit. 
 
