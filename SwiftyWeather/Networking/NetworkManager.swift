@@ -33,7 +33,7 @@ enum ForecastProvider: NWURLProtocol {
 final class NetworkManager {
     
     private static let instance = NetworkManager()
-    let apiKey: String = "595a1df1e1ba2b82bcf927c2f5cb4bfd"
+    let apiKey: String = ""
     
     // Singleton network manager
     public static var shared: NetworkManager {

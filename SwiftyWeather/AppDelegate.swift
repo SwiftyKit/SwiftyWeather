@@ -59,11 +59,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func setupAppearance(){
         UINavigationBar.appearance().barTintColor = UIColor(hex: 0x303F9F)
         UINavigationBar.appearance().tintColor = .white
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 22.0)]
+        let titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 22.0)]
+        UINavigationBar.appearance().titleTextAttributes = titleTextAttributes
         UINavigationBar.appearance().isTranslucent = false
         UIBarButtonItem.appearance().setBackButtonTitlePositionAdjustment(UIOffset(horizontal: -800, vertical: 0), for:UIBarMetrics.default)
+        
+        if #available(iOS 15, *) {
+            let appearance = UINavigationBarAppearance()
+            appearance.configureWithOpaqueBackground()
+            appearance.titleTextAttributes = titleTextAttributes
+            appearance.backgroundColor = UIColor(hex: 0x303F9F)
+            UINavigationBar.appearance().standardAppearance = appearance
+            UINavigationBar.appearance().scrollEdgeAppearance = appearance
+        }
     }
-    
-
 }
 
